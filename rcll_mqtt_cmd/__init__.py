@@ -58,7 +58,7 @@ class RcllMqttCmd:
         publish.single(f"{self.teamname}/prepare/DS", ORDER_ID, hostname=self.hostname)
 
     def set_robot_beacon(self, robot_name, x, y, yaw):
-        payload = f'{{ "name": {robot_name}, "x": {x}, "y": {y}, "yaw": {yaw} }}'
+        payload = f'{{ "name": "{robot_name}", "x": {x}, "y": {y}, "yaw": {yaw} }}'
         publish.single(f"{self.teamname}/beacon/{robot_name}", payload, hostname=self.hostname)
 
 
